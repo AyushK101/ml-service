@@ -1,0 +1,41 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+*.so
+
+# Virtual environments
+venv/
+.venv/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+
+# Django Migrations
+*/migrations/
+!*/migrations/__init__.py
+
+# IDE-specific files
+.idea/
+.vscode/
+*.code-workspace
+
+# # Dependency management
+# Pipfile
+# Pipfile.lock
+requirements.txt
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Sensitive files
+.env
+.secret
+
+# macOS and Windows
+.DS_Store
+Thumbs.db
