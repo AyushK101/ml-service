@@ -176,7 +176,7 @@ def gen(request):
                                                   f"when asked about government schemes, give links of government websites for specific"
                                                   f"the question is by User: {message}")
                 bot_response = response.text if response else "I'm sorry, I couldn't understand that."
-
+                
             except Exception as e:
                 print("Error generating response:", e)
                 bot_response = "There was an error generating a response. Please try again."

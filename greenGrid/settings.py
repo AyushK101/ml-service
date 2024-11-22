@@ -27,8 +27,7 @@ SECRET_KEY = 'django-insecure-o_et0o+eclb*)ovbw7y$adbpsedz=ose@_+vu1u+$3l6ehpg^u
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-ALLOWED_HOSTS = ["localhost"]
+ALLOWED_HOSTS = ["localhost","ec2-3-86-86-48.compute-1.amazonaws.com","ayushkumar.club"]
 
 
 # Application definition
@@ -43,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app1.apps.App1Config'
 ]
-
+     
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -58,12 +57,16 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
+    "https://main-greengrid.vercel.app"
 ]
 
 CORS_ALLOW_HEADERS = [
     'content-type',
     'authorization',
-    # Add other headers as needed
+    'x-csrftoken',
+    'accept',
+    'origin',
+    'x-requested-with',
 ]
 
 CORS_ALLOW_METHODS = [
