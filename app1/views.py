@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
-from tensorflow.keras.models import load_model
+from tensorflow.keras.models import load_model # type: ignore
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 import google.generativeai as genai
@@ -169,11 +169,11 @@ def gen(request):
         if message:
             try:
                 model = genai.GenerativeModel("gemini-1.5-flash")
-                response = model.generate_content(f"I know you are not expert just tell me genric answer in just 2 to 3 lines and "
+                response = model.generate_content(f"I know you are not expert just tell me generic answer in just 2 to 3 lines and "
                                                   f"be specific about the answer do not go here and there just say answer nothing else "
                                                   f"dont be in doubt just say one answer i know that answer maybe be "
                                                   f"incorrect but just say answer do not say impossible or hard to say just give me one answer "
-                                                  f"when asked about government schemes, give links of government websites for specific"
+                                                  # f"when asked about government schemes, give links of government websites for specific,  , other than that give answer according to the question asked"
                                                   f"the question is by User: {message}")
                 bot_response = response.text if response else "I'm sorry, I couldn't understand that."
                 
